@@ -2,14 +2,15 @@
 
 const mathInp = document.getElementById('numInp');
 const calApp = document.getElementById('calculator');
-const btnBarobar = document.getElementById('btn8');
+const evelBtn = document.getElementById('btn8');
 const btnClear = document.getElementById('btn1');
-const kasr = document.getElementById('btn2');
-const qoldiqBtn = document.getElementById('btn3');
-const kopaytiruvBtn = document.getElementById('btn5');
-const minusBtn = document.getElementById('btn6');
-const plusBtn = document.getElementById('btn7');
-const boluv = document.getElementById('btn4');
+const fractionBtn = document.getElementById('btn2');
+const remnantBtn = document.getElementById('btn3');
+const multipBtn = document.getElementById('btn5');
+const divisionBtn = document.getElementById('btn6');
+const additionBtn = document.getElementById('btn7');
+const stayBtn = document.getElementById('btn4');
+const dotBtn = document.getElementById('btn9');
 const btn7 = document.getElementById('btn10');
 const btn8 = document.getElementById('btn11');
 const btn9 = document.getElementById('btn12');
@@ -60,27 +61,31 @@ const func = () => {
         mathInp.value += '6';
     });
 
-    boluv.addEventListener('click', () => {
+    stayBtn.addEventListener('click', () => {
         mathInp.value += '/';
     });
 
-    qoldiqBtn.addEventListener('click', () => {
+    remnantBtn.addEventListener('click', () => {
         mathInp.value += "%";
     });
 
-    kopaytiruvBtn.addEventListener('click', () => {
+    multipBtn.addEventListener('click', () => {
         mathInp.value += "*";
     });
 
-    minusBtn.addEventListener('click', () => {
+    divisionBtn.addEventListener('click', () => {
         mathInp.value += "-";
     });
 
-    plusBtn.addEventListener('click', () => {
+    additionBtn.addEventListener('click', () => {
         mathInp.value += "+";
     });
 
-    kasr.addEventListener('click', () => {
+    dotBtn.addEventListener('click', () => {
+        mathInp.value += ".";
+    });
+
+    fractionBtn.addEventListener('click', () => {
         const sum = `(-${mathInp.value})`;
         mathInp.value = sum
     })
@@ -89,9 +94,9 @@ const func = () => {
         mathInp.value = "";
     });
 
-    btnBarobar.addEventListener('click', () => {
+    evelBtn.addEventListener('click', () => {
         const resault = mathInp.value
-        if (btnBarobar.click) {
+        if (evelBtn.click) {
             mathInp.value = eval(resault);
         } else {
             mathInp.value = '0';

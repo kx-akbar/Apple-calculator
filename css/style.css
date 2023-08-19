@@ -4,9 +4,18 @@
   box-sizing: border-box;
 }
 
+html, body {
+  background: rgb(162, 163, 162);
+}
+
+input {
+  user-select: none;
+}
+
 button {
   cursor: pointer;
   user-select: none;
+  outline: none;
 }
 
 .container {
@@ -33,7 +42,7 @@ input[type=number]::-webkit-inner-spin-button {
   width: 18.7em;
   height: 24em;
   padding: 1em;
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   border-radius: 0.5em;
   border: 3px solid black;
 }
@@ -46,16 +55,18 @@ input[type=number]::-webkit-inner-spin-button {
   border: 1px solid black;
   border-radius: 0.3em;
   outline: none;
-  background-color: #676767;
+  background-color: #b2aeae;
   color: white;
 }
 
 #numInp::placeholder {
   font-size: 1em;
-  color: #1C1C1C;
+  color: #1c1c1c;
 }
 
-.button-1, .button-2, .button-3 {
+.button-1,
+.button-2,
+.button-3 {
   text-align: center;
   border: none;
   border-radius: 50%;
@@ -63,7 +74,7 @@ input[type=number]::-webkit-inner-spin-button {
   padding-top: 0.2em;
   width: 3em;
   height: 3em;
-  background-color: #A0A0A0;
+  background-color: #a0a0a0;
 }
 
 .operators {
@@ -90,7 +101,7 @@ input[type=number]::-webkit-inner-spin-button {
   height: 3em;
   color: white;
   margin: 0.9em 0;
-  background-color: #F69906;
+  background-color: #f69906;
 }
 
 .numbers {
@@ -113,6 +124,20 @@ input[type=number]::-webkit-inner-spin-button {
   background-color: #313131;
 }
 
-.btn10, .btn14, .btn16, .btn19 {
+.btn10,
+.btn14,
+.btn16,
+.btn19 {
   right: 2em;
+}
+
+@media only screen and (max-width: 992px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  html, body {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */
