@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apple-Calculator</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="box">
-        <input type="number" placeholder="0" id="num-inp" />
+      <div class="box" id="calculator">
+        <input type="text" placeholder="0" id="numInp" />
         <section class="operators">
           <button class="btn button-1" id="btn1">AC</button>
           <button class="btn button-2" id="btn2">+/-</button>
@@ -36,6 +43,7 @@
           </div>
         </section>
       </div>
-      </div>
+    </div>
+    <script src="./app.js"></script>
   </body>
 </html>
