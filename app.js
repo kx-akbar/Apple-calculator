@@ -20,6 +20,7 @@ const btn6 = document.getElementById('btn15');
 const btn1 = document.getElementById('btn16');
 const btn2 = document.getElementById('btn17');
 const btn3 = document.getElementById('btn18');
+const zero = document.getElementById('btn19');
 
 
 
@@ -59,6 +60,10 @@ const func = () => {
 
     btn6.addEventListener('click', () => {
         mathInp.value += '6';
+    });
+
+    zero.addEventListener('click', () => {
+        mathInp.value += '0';
     });
 
     stayBtn.addEventListener('click', () => {
