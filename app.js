@@ -1,113 +1,110 @@
 "use strict";
 
-const mathInp = document.getElementById('numInp');
-const calApp = document.getElementById('calculator');
-const evelBtn = document.getElementById('btn8');
-const btnClear = document.getElementById('btn1');
-const fractionBtn = document.getElementById('btn2');
-const remnantBtn = document.getElementById('btn3');
-const multipBtn = document.getElementById('btn5');
-const divisionBtn = document.getElementById('btn6');
-const additionBtn = document.getElementById('btn7');
-const stayBtn = document.getElementById('btn4');
-const dotBtn = document.getElementById('btn9');
-const btn7 = document.getElementById('btn10');
-const btn8 = document.getElementById('btn11');
-const btn9 = document.getElementById('btn12');
-const btn4 = document.getElementById('btn13');
-const btn5 = document.getElementById('btn14');
-const btn6 = document.getElementById('btn15');
-const btn1 = document.getElementById('btn16');
-const btn2 = document.getElementById('btn17');
-const btn3 = document.getElementById('btn18');
-const zero = document.getElementById('btn19');
+const mathInp = document.getElementById("numInp");
+const calApp = document.getElementById("calculator");
+const equalBtn = document.getElementById("equal-btn");
+const btnClear = document.getElementById("clear-btn");
+const fractionBtn = document.getElementById("button");
+const residualBtn = document.getElementById("residual-btn");
+const multipBtn = document.getElementById("multip-btn");
+const divisionBtn = document.getElementById("minus-btn");
+const additionBtn = document.getElementById("additon-btn");
+const stayBtn = document.getElementById("tobe-btn");
+const dotBtn = document.getElementById("dot-btn");
+const btn7 = document.getElementById("seven-btn");
+const btn8 = document.getElementById("eight-btn");
+const btn9 = document.getElementById("nine-btn");
+const btn4 = document.getElementById("four-btn");
+const btn5 = document.getElementById("five-btn");
+const btn6 = document.getElementById("six-btn");
+const btn1 = document.getElementById("one-btn");
+const btn2 = document.getElementById("two-btn");
+const btn3 = document.getElementById("three-btn");
+const zero = document.getElementById("zero-btn");
 
+const CalcFunction = () => {
+  dotBtn.addEventListener("click", () => {
+    mathInp.value += ".";
+  });
 
+  btnClear.addEventListener("click", () => {
+    mathInp.value = "";
+  });
 
-const func = () => {
+  residualBtn.addEventListener("click", () => {
+    mathInp.value += "%";
+  });
 
-    btn7.addEventListener('click', () => {
-        mathInp.value += '7';
-    });
+  stayBtn.addEventListener("click", () => {
+    mathInp.value += "/";
+  });
 
-    btn8.addEventListener('click', () => {
-        mathInp.value += '8';
-    });
+  fractionBtn.addEventListener("click", () => {
+    mathInp.value = `(-${mathInp.value})`;
+  });
 
-    btn9.addEventListener('click', () => {
-        mathInp.value += '9';
-    });
+  divisionBtn.addEventListener("click", () => {
+    mathInp.value += "-";
+  });
 
-    btn1.addEventListener('click', () => {
-        mathInp.value += '1';
-    });
+  additionBtn.addEventListener("click", () => {
+    mathInp.value += "+";
+  });
 
-    btn2.addEventListener('click', () => {
-        mathInp.value += '2';
-    });
+  multipBtn.addEventListener("click", () => {
+    mathInp.value += "*";
+  });
 
-    btn3.addEventListener('click', () => {
-        mathInp.value += '3';
-    });
+  btn1.addEventListener("click", () => {
+    mathInp.value += "1";
+  });
 
-    btn4.addEventListener('click', () => {
-        mathInp.value += '4';
-    });
+  btn2.addEventListener("click", () => {
+    mathInp.value += "2";
+  });
 
-    btn5.addEventListener('click', () => {
-        mathInp.value += '5';
-    });
+  btn3.addEventListener("click", () => {
+    mathInp.value += "3";
+  });
 
-    btn6.addEventListener('click', () => {
-        mathInp.value += '6';
-    });
+  btn4.addEventListener("click", () => {
+    mathInp.value += "4";
+  });
 
-    zero.addEventListener('click', () => {
-        mathInp.value += '0';
-    });
+  btn5.addEventListener("click", () => {
+    mathInp.value += "5";
+  });
 
-    stayBtn.addEventListener('click', () => {
-        mathInp.value += '/';
-    });
+  btn6.addEventListener("click", () => {
+    mathInp.value += "6";
+  });
 
-    remnantBtn.addEventListener('click', () => {
-        mathInp.value += "%";
-    });
+  btn7.addEventListener("click", () => {
+    mathInp.value += "7";
+  });
 
-    multipBtn.addEventListener('click', () => {
-        mathInp.value += "*";
-    });
+  btn8.addEventListener("click", () => {
+    mathInp.value += "8";
+  });
 
-    divisionBtn.addEventListener('click', () => {
-        mathInp.value += "-";
-    });
+  btn9.addEventListener("click", () => {
+    mathInp.value += "9";
+  });
 
-    additionBtn.addEventListener('click', () => {
-        mathInp.value += "+";
-    });
+  zero.addEventListener("click", () => {
+    mathInp.value += "0";
+  });
 
-    dotBtn.addEventListener('click', () => {
-        mathInp.value += ".";
-    });
+  equalBtn.addEventListener("click", () => {
+    const resault = mathInp.value;
+    if (equalBtn.click) {
+      mathInp.value = eval(resault);
+    } else {
+      mathInp.value = "0";
+    }
+  });
+};
 
-    fractionBtn.addEventListener('click', () => {
-        const sum = `(-${mathInp.value})`;
-        mathInp.value = sum
-    })
-
-    btnClear.addEventListener('click', () => {
-        mathInp.value = "";
-    });
-
-    evelBtn.addEventListener('click', () => {
-        const resault = mathInp.value
-        if (evelBtn.click) {
-            mathInp.value = eval(resault);
-        } else {
-            mathInp.value = '0';
-        }
-    })
-
-}
-
-func();
+(function () {
+  CalcFunction();
+})();

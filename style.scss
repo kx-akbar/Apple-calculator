@@ -1,8 +1,4 @@
-$border-width: (
-  border1: 1px solid black,
-  border2: none,
-  border3: 3px solid black,
-);
+// Style
 
 * {
   margin: 0;
@@ -10,141 +6,154 @@ $border-width: (
   box-sizing: border-box;
 }
 
-html,body{
-  background: rgb(162, 163, 162);
-}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap");
 
-input {
-  user-select: none;
-}
-
-button {
-  cursor: pointer;
-  user-select: none;
-  outline: none;
+body {
+  background: gray;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .container {
-  display: flex;
-  align-items: center;
+  display: grid;
   justify-content: center;
-  flex-direction: column;
-  padding: 7em 0 0 0;
-}
-
-.numbers {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 0.7em;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.box {
-  width: 18.7em;
-  height: 24em;
-  padding: 1em;
-  background-color: #1c1c1c;
-  border-radius: 0.5em;
-  border: map-get($border-width, border3);
-}
-
-#numInp {
-  padding: 0.6em 0.4em 0.4em 0.4em;
-  width: 100%;
-  margin-bottom: 2em;
-  font-size: 1.8em;
-  border: map-get($border-width, border1);
-  border-radius: 0.3em;
-  outline: none;
-  background-color: #b2aeae;
-  color: #ffff;
-}
-
-#numInp::placeholder {
-  font-size: 1em;
-  color: #1c1c1c;
-}
-
-.button-1,
-.button-2,
-.button-3 {
-  text-align: center;
-  border: none;
-  border-radius: 50%;
-  font-weight: 600;
-  padding-top: 0.2em;
-  width: 3em;
-  height: 3em;
-  background-color: #a0a0a0;
-}
-
-.operators {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  position: relative;
-}
-
-.math-btn {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: -0.7em;
-}
-
-.math-btn button {
-  text-align: center;
-  border: none;
-  border-radius: 50%;
-  font-weight: 600;
-  padding-top: 0.2em;
-  width: 3em;
-  height: 3em;
-  color: #ffff;
-  margin: 0.9em 0;
-  background-color: #f69906;
-}
-
-.numbers {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 0.5em 2.2em;
-  position: absolute;
-  top: 3em;
-}
-
-.numbers button {
-  text-align: center;
-  border: none;
-  border-radius: 50%;
-  font-weight: 600;
-  padding-top: 0.2em;
-  width: 3em;
-  height: 3em;
-  color: #ffff;
-  background-color: #313131;
-}
-
-.btn10,
-.btn14,
-.btn16,
-.btn19 {
-  right: 2em;
-}
-
-@media only screen and (max-width: 992px){
-  html,body{
-    font-size: 16px;
-  }
-}
-
-@media only screen and (max-width: 400px){
-  html,body{
-    font-size: 16px;
+  grid-template-columns: auto;
+  align-items: center;
+  height: 100vh;
+  .box {
+    display: grid;
+    grid-template-areas:
+      "v v v v"
+      "i i i i";
+    background: black;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    > input {
+      justify-content: center;
+      grid-area: v;
+      outline: none;
+      background-color: transparent;
+      border: none;
+      width: 14rem;
+      margin-bottom: 1.5rem;
+      padding-right: 1.3rem;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      font-size: 2rem;
+      text-align: right;
+      color: white;
+      &::placeholder {
+        color: white;
+      }
+    }
+    .operators {
+      display: grid;
+      grid-template-areas:
+        "q f s g"
+        "o l z r"
+        "p t e w"
+        "u m n c"
+        "y y j h";
+      justify-content: center;
+      grid-area: i;
+      gap: 0.5rem;
+      button {
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        user-select: none;
+      }
+      .button-1 {
+        grid-area: q;
+        background-color: #a5a5a5;
+      }
+      .button-2 {
+        grid-area: f;
+        background-color: #a5a5a5;
+      }
+      .button-3 {
+        grid-area: s;
+        background-color: #a5a5a5;
+      }
+      .button-4 {
+        grid-area: g;
+        background-color: #ff9f0a;
+      }
+      .button-5 {
+        grid-area: o;
+        background-color: #333333;
+      }
+      .button-6 {
+        grid-area: l;
+        background-color: #333333;
+      }
+      .button-7 {
+        grid-area: z;
+        background-color: #333333;
+      }
+      .button-8 {
+        grid-area: r;
+        background-color: #ff9f0a;
+      }
+      .button-9 {
+        grid-area: p;
+        background-color: #333333;
+      }
+      .button-10 {
+        grid-area: t;
+        background-color: #333333;
+      }
+      .button-11 {
+        grid-area: e;
+        background-color: #333333;
+      }
+      .button-12 {
+        grid-area: w;
+        background-color: #ff9f0a;
+      }
+      .button-13 {
+        grid-area: u;
+        background-color: #333333;
+      }
+      .button-14 {
+        grid-area: m;
+        background-color: #333333;
+      }
+      .button-15 {
+        grid-area: n;
+        background-color: #333333;
+      }
+      .button-16 {
+        grid-area: c;
+        background-color: #ff9f0a;
+      }
+      .button-17 {
+        text-align: left;
+        font-size: 1.4rem;
+        padding-left: 1.1rem;
+        border-radius: 50px;
+        grid-area: y;
+        background-color: #333333;
+      }
+      .button-18 {
+        grid-area: j;
+        background-color: #333333;
+      }
+      .button-19 {
+        grid-area: h;
+        background-color: #ff9f0a;
+      }
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      padding: 0.5rem;
+    }
   }
 }

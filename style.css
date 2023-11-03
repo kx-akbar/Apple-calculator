@@ -35,8 +35,13 @@ body {
   width: 14rem;
   margin-bottom: 1.5rem;
   padding-right: 1.3rem;
-  font-size: 1.5rem;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 2rem;
   text-align: right;
+  color: white;
+}
+.container .box > input::-moz-placeholder {
   color: white;
 }
 .container .box > input::placeholder {
@@ -53,7 +58,9 @@ body {
   border: none;
   cursor: pointer;
   color: #fff;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .container .box .operators .button-1 {
   grid-area: q;
@@ -144,6 +151,4 @@ body {
   height: 3rem;
   border-radius: 50%;
   padding: 0.5rem;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
